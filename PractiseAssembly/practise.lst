@@ -1,0 +1,76 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Divide, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000 E3A01005        LDR              R1, = 5
+    7 00000004 E3A00003        LDR              R0, = 3
+    8 00000008         
+    9 00000008 E0210000        EOR              R0,     R1,     R0
+   10 0000000C E0211000        EOR              R1,     R1,     R0
+   11 00000010 E0210000        EOR              R0,     R1,     R0
+   12 00000014         
+   13 00000014         
+   14 00000014 EAFFFFFE 
+                       stop    B                stop
+   15 00000018         
+   16 00000018                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\practise.d -o.\practis
+e.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philip
+s --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="NO_C
+LOCK_SETUP SETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SE
+TA 1" --predefine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\practis
+e.lst Practise.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Divide 00000000
+
+Symbol: Divide
+   Definitions
+      At line 1 in file Practise.s
+   Uses
+      None
+Comment: Divide unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file Practise.s
+   Uses
+      At line 3 in file Practise.s
+Comment: start used once
+stop 00000014
+
+Symbol: stop
+   Definitions
+      At line 14 in file Practise.s
+   Uses
+      At line 14 in file Practise.s
+Comment: stop used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file Practise.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+341 symbols in table

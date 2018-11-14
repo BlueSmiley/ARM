@@ -1,0 +1,122 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ConsoleInput, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 IMPORT           getkey
+    4 00000000                 IMPORT           sendchar
+    5 00000000                 EXPORT           start
+    6 00000000                 PRESERVE8
+    7 00000000         
+    8 00000000         start
+    9 00000000 E3A04000        LDR              R4, = 0
+   10 00000004 E3A0500A        LDR              R5, = 10
+   11 00000008         read
+   12 00000008         
+   13 00000008 EBFFFFFE        BL               getkey      ; read key from con
+                                                            sole
+   14 0000000C E350000D        CMP              R0, #0x0D   ; while (key != CR)
+                                                            
+   15 00000010 0A000004        BEQ              endRead     ;{
+   16 00000014 EBFFFFFE        BL               sendchar    ;   echo key back t
+                                                            o console
+   17 00000018 E0040495        MUL              R4,     R5,     R4
+   18 0000001C E2406030        SUB              R6,     R0,     #'0'
+   19 00000020 E0844006        ADD              R4,     R4,     R6
+   20 00000024         
+   21 00000024 EAFFFFF7        B                read        ; }
+   22 00000028         
+   23 00000028         endRead
+   24 00000028         
+   25 00000028 EAFFFFFE 
+                       stop    B                stop
+   26 0000002C         
+   27 0000002C                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\consoleinput.d -o.\con
+soleinput.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\In
+c\Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefi
+ne="NO_CLOCK_SETUP SETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_I
+NTVEC SETA 1" --predefine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.
+\consoleinput.lst ConsoleInput.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ConsoleInput 00000000
+
+Symbol: ConsoleInput
+   Definitions
+      At line 1 in file ConsoleInput.s
+   Uses
+      None
+Comment: ConsoleInput unused
+endRead 00000028
+
+Symbol: endRead
+   Definitions
+      At line 23 in file ConsoleInput.s
+   Uses
+      At line 15 in file ConsoleInput.s
+Comment: endRead used once
+read 00000008
+
+Symbol: read
+   Definitions
+      At line 11 in file ConsoleInput.s
+   Uses
+      At line 21 in file ConsoleInput.s
+Comment: read used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 8 in file ConsoleInput.s
+   Uses
+      At line 5 in file ConsoleInput.s
+Comment: start used once
+stop 00000028
+
+Symbol: stop
+   Definitions
+      At line 25 in file ConsoleInput.s
+   Uses
+      At line 25 in file ConsoleInput.s
+Comment: stop used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+getkey 00000000
+
+Symbol: getkey
+   Definitions
+      At line 3 in file ConsoleInput.s
+   Uses
+      At line 13 in file ConsoleInput.s
+Comment: getkey used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file ConsoleInput.s
+   Uses
+      None
+Comment: main unused
+sendchar 00000000
+
+Symbol: sendchar
+   Definitions
+      At line 4 in file ConsoleInput.s
+   Uses
+      At line 16 in file ConsoleInput.s
+Comment: sendchar used once
+3 symbols
+345 symbols in table

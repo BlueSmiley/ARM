@@ -1,0 +1,76 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Expressions, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000 E3A01005        LDR              R1, =5      ; x = 5
+    7 00000004 E3A02006        LDR              R2, =6      ; y = 6
+    8 00000008 E0813002        ADD              R3,     R1,     R2
+    9 0000000C E3A04034        LDR              R4, ='4'
+   10 00000010 E3A05036        LDR              R5, ='6'
+   11 00000014         
+   12 00000014         ; your program goes here
+   13 00000014         
+   14 00000014 EAFFFFFE 
+                       stop    B                stop
+   15 00000018         
+   16 00000018                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\expressions.d -o.\expr
+essions.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\
+Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine
+="NO_CLOCK_SETUP SETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INT
+VEC SETA 1" --predefine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\e
+xpressions.lst Expressions.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Expressions 00000000
+
+Symbol: Expressions
+   Definitions
+      At line 1 in file Expressions.s
+   Uses
+      None
+Comment: Expressions unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file Expressions.s
+   Uses
+      At line 3 in file Expressions.s
+Comment: start used once
+stop 00000014
+
+Symbol: stop
+   Definitions
+      At line 14 in file Expressions.s
+   Uses
+      At line 14 in file Expressions.s
+Comment: stop used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file Expressions.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+341 symbols in table

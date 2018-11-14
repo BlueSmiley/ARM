@@ -1,0 +1,1 @@
+.\stackreverse.o: StackReverse.s
